@@ -69,10 +69,10 @@ void clrscr() {
 }
 
 void randColorText() {
-	char color[6] = {RED, MAGENTA, YELLOW, DARKGRAY, GRAY, DARKMAGENTA};
+	char color[5] = {MAGENTA, YELLOW, WHITE, DARKMAGENTA, DARKGREEN};
 	
 	HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
-	SetConsoleTextAttribute(hStdOut, color[rand() % 6]);	
+	SetConsoleTextAttribute(hStdOut, color[rand() % 5]);	
 }
 
 void randColorSymbolOdd() {
@@ -83,10 +83,10 @@ void randColorSymbolOdd() {
 }
 
 void randColorSymbolEven() {
-	char color[4] = {DARKGRAY, GRAY, DARKYELLOW, DARKRED};
+	char color[2] = {RED, WHITE};
 	
 	HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
-	SetConsoleTextAttribute(hStdOut, color[rand() % 4]);
+	SetConsoleTextAttribute(hStdOut, color[rand() % 2]);
 }
 
 void randColorGreen() {
@@ -114,7 +114,7 @@ void showRandomColorText(const char text[]) {
 }
 
 void lyric() {
-	printf("Good ");
+	printf("\tGood ");
 	Beep(G4, QUARTER_NOTE);
 	printf("ti");
 	Beep(C5, QUARTER_NOTE);
@@ -125,7 +125,7 @@ void lyric() {
 	printf("bring\n");
 	Beep(B4, HALF_NOTE);
 
-	printf("To ");
+	printf("\tTo ");
 	Beep(B4, QUARTER_NOTE);
 	printf("you ");
 	Beep(C5, QUARTER_NOTE);
@@ -136,7 +136,7 @@ void lyric() {
 	printf("kin\n");
 	Beep(G4, HALF_NOTE);
 	
-	printf("Good ");
+	printf("\tGood ");
 	Beep(D5, QUARTER_NOTE);
 	printf("ti");
 	Beep(E5, QUARTER_NOTE);
@@ -149,7 +149,7 @@ void lyric() {
 	printf("mas\n");
 	Beep(G4, QUARTER_NOTE);
 	
-	printf("And ");
+	printf("\tAnd ");
 	Beep(G4, EIGHTH_NOTE);
 	printf("a ");
 	Beep(G4, EIGHTH_NOTE);
@@ -165,7 +165,7 @@ void lyric() {
 }
 
 void chorus() {
-	printf("We ");
+	printf("\tWe ");
 	Beep(G4, QUARTER_NOTE);
 	printf("wish ");
 	Beep(C5, QUARTER_NOTE);
@@ -182,7 +182,7 @@ void chorus() {
 	printf("mas\n");
 	Beep(A4, QUARTER_NOTE);
 	
-	printf("We ");
+	printf("\tWe ");
 	Beep(A4, QUARTER_NOTE);
 	printf("wish ");
 	Beep(D5, QUARTER_NOTE);
@@ -199,7 +199,7 @@ void chorus() {
 	printf("mas\n");
 	Beep(G4, QUARTER_NOTE);
 	
-	printf("We ");
+	printf("\tWe ");
 	Beep(G4, QUARTER_NOTE);
 	printf("wish ");
 	Beep(E5, QUARTER_NOTE);
@@ -216,7 +216,7 @@ void chorus() {
 	printf("mas\n");
 	Beep(A4, QUARTER_NOTE);
 	
-	printf("And ");
+	printf("\tAnd ");
 	Beep(G4, EIGHTH_NOTE);
 	printf("a ");
 	Beep(G4, EIGHTH_NOTE);
@@ -246,6 +246,7 @@ int drawMerry(int i, int j) {
 		printf("MERRY ");
 		j = (TREE_HEIGHT - 6) / 2 + 1 + 5;
 	} else {
+		randColorSymbolEven();
 		printf("*o");
 		j++;
 	}
@@ -257,6 +258,7 @@ int drawChristmas(int i, int j) {
 		printf(" CHRISTMAS");
 		j = (TREE_HEIGHT - 6) / 2 + 1 + 9;
 	} else {
+		randColorSymbolEven();
 		printf("*o");
 		j++;
 	}
@@ -336,23 +338,24 @@ int main(int argc, char *argv[]) {
 	ShowWindow(GetConsoleWindow(), SW_SHOWMAXIMIZED);
 	delay(1000);
 	drawChirstMasTree();
-	showRandomColorText("          <3 MERRY CHRISTMAS <3");
+	showRandomColorText("             <3 MERRY CHRISTMAS <3");
 	delay(1500);
 	clrscr();
 	drawChirstMasTree();
-	showRandomColorText("          ^.^ GIANG SINH AN LANH ^.^");
+	showRandomColorText("           ^.^ GIANG SINH AN LANH ^.^");
 	delay(1500);
 	clrscr();
 	drawChirstMasTree();
-	showRandomColorText("          ^_^ TAM BIET 2021 ^_^");
+	showRandomColorText("             ^_^ TAM BIET 2021 ^_^");
 	delay(1500);
 	clrscr();
 	drawChirstMasTree();
-	showRandomColorText("          *.* CHAO 2022 *.*");
+	showRandomColorText("               *.* CHAO 2022 *.*");
 	delay(1500);
 	clrscr();
 	drawChirstMasTree();
 	showRandomColorText("          ***** MERRY CHRISTMAS *****");
+	printf("\n");
 	delay(1500);
 	song();
 	changeToWhite();
