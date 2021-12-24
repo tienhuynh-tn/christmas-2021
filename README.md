@@ -13,3 +13,8 @@
 - [[Beep Music in C/C++] Code merry christmas | NOEL BEEP SONG](https://www.youtube.com/watch?v=J7ohcZuiz1s)
 - [Stackoverflow - C++ Win32 Console Color](https://stackoverflow.com/questions/17125440/c-win32-console-color/17125539)
 - [C For Dummies Blog - The delay() Function](https://c-for-dummies.com/blog/?p=69)
+
+## License & Copyright
+&copy; 2021 Tien Huynh tienhuynh-tn Licensed under the [MIT LICENSE](https://github.com/tienhuynh-tn/christmas-2021/blob/main/LICENSE).
+
+> :love_you_gesture: Feel free to use my repository and star it if you find something interesting :love_you_gesture:
